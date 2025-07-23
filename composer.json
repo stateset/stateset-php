@@ -1,38 +1,80 @@
 {
-    "description": "This is the Stateset One API based on The OpenAPI Specification. # Introduction This API definition is intended to to be a good starting point for describing your API in [OpenAPI/Swagger format](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md). # OpenAPI Specification The goal of The OpenAPI Specification is to define a standard, language-agnostic interface to REST APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined via OpenAPI, a consumer can  understand and interact with the remote service with a minimal amount of implementation logic. Similar to what interfaces have done for lower-level programming, OpenAPI removes the guesswork in calling the service.",
+    "name": "stateset/php-client",
+    "description": "Official StateSet PHP SDK - A modern, comprehensive PHP client for the StateSet API with support for returns, warranties, work orders, and more",
+    "type": "library",
     "keywords": [
-        "openapitools",
-        "openapi-generator",
-        "openapi",
-        "php",
+        "stateset",
+        "api",
         "sdk",
-        "rest",
-        "api"
+        "php",
+        "client",
+        "returns",
+        "warranties",
+        "work-orders",
+        "inventory",
+        "openapi",
+        "rest"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "homepage": "https://stateset.com",
+    "license": "MIT",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "StateSet Team",
+            "email": "developers@stateset.com",
+            "homepage": "https://stateset.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/stateset/stateset-php/issues",
+        "docs": "https://docs.stateset.com",
+        "email": "support@stateset.com"
+    },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.1",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "guzzlehttp/psr7": "^1.7 || ^2.0"
+        "guzzlehttp/guzzle": "^7.8",
+        "guzzlehttp/psr7": "^2.6",
+        "psr/http-client": "^1.0",
+        "psr/http-message": "^2.0",
+        "psr/log": "^3.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^3.5"
+        "phpunit/phpunit": "^10.5",
+        "friendsofphp/php-cs-fixer": "^3.64",
+        "phpstan/phpstan": "^1.12",
+        "mockery/mockery": "^1.6",
+        "symfony/var-dumper": "^7.0",
+        "roave/security-advisories": "dev-master"
     },
     "autoload": {
-        "psr-4": { "OpenAPI\\Client\\" : "lib/" }
+        "psr-4": { 
+            "StateSet\\Client\\": "lib/" 
+        }
     },
     "autoload-dev": {
-        "psr-4": { "OpenAPI\\Client\\Test\\" : "test/" }
-    }
+        "psr-4": { 
+            "StateSet\\Client\\Test\\": "test/" 
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "cs:check": "php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "php-cs-fixer fix",
+        "phpstan": "phpstan analyse",
+        "quality": [
+            "@cs:check",
+            "@phpstan",
+            "@test"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

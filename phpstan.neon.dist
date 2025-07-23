@@ -1,0 +1,18 @@
+parameters:
+    level: 8
+    paths:
+        - lib
+        - test
+    excludePaths:
+        - vendor
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        # Allow mixed types for flexibility in API responses
+        - '#Unsafe usage of new static\(\)#'
+        - '#Method .* has parameter .* with no value type specified in iterable type array#'
+        - '#Method .* return type has no value type specified in iterable type array#'
+        # OpenAPI generated code patterns
+        - '#Call to an undefined method OpenAPI\\Client\\.*#'
+        - '#Access to an undefined property OpenAPI\\Client\\.*#'

@@ -1,0 +1,55 @@
+# Dependencies
+/vendor/
+composer.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing and coverage
+.phpunit.cache/
+/coverage/
+/logs/
+*.cache
+clover.xml
+junit.xml
+
+# Build artifacts
+/dist/
+/build/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# PHP specific
+*.phar
+.php_cs.cache
+.phpunit.result.cache
+
+# Documentation builds
+/docs/_build/
+
+# Local development
+/examples/*.local.php
